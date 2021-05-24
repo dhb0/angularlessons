@@ -1,0 +1,11 @@
+div{
+    width: 100%;
+    background-color: aqua;
+    display: flex;
+    justify-content: center;
+}
+
+div h3{
+    color:tomato;
+    padding: 1rem;
+}

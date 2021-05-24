@@ -1,35 +1,165 @@
+
+<app-header></app-header>
 <h1>Hello World</h1>
-<h2>{{title}}</h2>
-<h3>{{title2}}</h3>
-<h3>{{getName()}}</h3>
-<h3>{{obj.name}} is {{obj.age}} years old</h3>
-<h3>{{arr}}</h3>
-<h3>{{location}}</h3>
+<h2>{{ title }}</h2>
+<h3>{{ title2 }}</h3>
+<h3>{{ getName() }}</h3>
+<h3>{{ obj.name }} is {{ obj.age }} years old</h3>
+<h3>{{ arr }}</h3>
+<h3>{{ location }}</h3>
 <app-user-list></app-user-list>
 <app-login></app-login>
 <button (click)="nameAlert('Denizhasbeyaz')">Show my name</button>
 <button (click)="nameAlert(myName)">Show my name</button>
-<hr>
+<hr />
 <h3>Some events</h3>
 <button (click)="someEvent('this is click event')">Click me babe</button>
-<br>
-<input type="text" (keyup)="someEvent(box.value)" #box placeholder="keyup event"><br>
-<input type="text" (keydown)="someEvent(box2.value)" #box2 placeholder="keydown event"><br>
-<input type="text" (keydown.enter)="someEvent(box3.value)" #box3 placeholder="keydown enter event"><br>
-<input type="text" (keydown.space)="someEvent(box4.value)" #box4 placeholder="keydown space event"><br>
-<input type="text" #box5 (blur)="someEvent(box5.value)" placeholder="blurevent">
-<h1 style="background-color: aqua;" (mouseover)="someEvent('mouseoverevevnt')">Mouseevent</h1>
-<h1 style="background-color: red;" (mouseleave)="someEvent('mouse leaves')">Mouseevent</h1>
-<hr>
+<br />
+<input
+  type="text"
+  (keyup)="someEvent(box.value)"
+  #box
+  placeholder="keyup event"
+/><br />
+<input
+  type="text"
+  (keydown)="someEvent(box2.value)"
+  #box2
+  placeholder="keydown event"
+/><br />
+<input
+  type="text"
+  (keydown.enter)="someEvent(box3.value)"
+  #box3
+  placeholder="keydown enter event"
+/><br />
+<input
+  type="text"
+  (keydown.space)="someEvent(box4.value)"
+  #box4
+  placeholder="keydown space event"
+/><br />
+<input
+  type="text"
+  #box5
+  (blur)="someEvent(box5.value)"
+  placeholder="blurevent"
+/>
+<h1 style="background-color: aqua" (mouseover)="someEvent('mouseoverevevnt')">
+  Mouseevent
+</h1>
+<h1 style="background-color: red" (mouseleave)="someEvent('mouse leaves')">
+  Mouseevent
+</h1>
+<hr />
 <h3>Get input values</h3>
-<input type="text" (keyup)="getValue($event)">
-<h3>{{currentVal}}</h3>
-<hr>
-<input type="text" #inputbox>
+<input type="text" (keyup)="getValue($event)" />
+<h3>{{ currentVal }}</h3>
+<hr />
+<input type="text" #inputbox />
 <button (click)="getValueByButton(inputbox.value)">Get input value</button>
-<h3>{{currentVal2}}</h3>
-<hr>
+<h3>{{ currentVal2 }}</h3>
+<hr />
 <h1>Property Binding</h1>
-<input type="text" [disabled]="boxDisabled" [value]="isim">Property binding<br> 
-<input type="text" disabled={{boxDisabled}} value={{isim}}>Interpolation<br> 
+<input type="text" [disabled]="boxDisabled" [value]="isim" />Property binding<br />
+<input
+  type="text"
+  disabled="{{ boxDisabled }}"
+  value="{{ isim }}"
+/>Interpolation<br />
 <button (click)="enableBox()">Enable input</button>Property binding works
+<hr />
+<h1>ngIf</h1>
+<h1 *ngIf="showH1 === 'yes'; then ifBlock; else elseBlock"></h1>
+<ng-template #ifBlock>Conditionally rendered if block</ng-template>
+<ng-template #elseBlock>else statement</ng-template>
+<br />
+<ng-template [ngIf]="showColor === 'red'"> RED </ng-template>
+<ng-template [ngIf]="showColor === 'blue'"> BLUE </ng-template>
+<ng-template [ngIf]="showColor === 'green'"> GREEN </ng-template>
+<hr />
+<h1>Switch Case</h1>
+<div [ngSwitch]="showH1Color">
+  <h2 style="color: red" *ngSwitchCase="'red'">RED</h2>
+  <h2 style="color: blue" *ngSwitchCase="'blue'">Blue</h2>
+  <h2 style="color: green" *ngSwitchCase="'green'">RED</h2>
+  <h2 style="color: yellow" *ngSwitchCase="'yellow'">RED</h2>
+  <h2 style="color: black" *ngSwitchDefault>BLACK</h2>
+</div>
+<hr />
+<h1>For loop</h1>
+<h4 *ngFor="let item of labels">
+  {{ item }}
+</h4>
+<table border="1">
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+  </tr>
+  <tbody>
+    <tr *ngFor="let item of users">
+      <td>{{ item.name }}</td>
+      <td>{{ item.email }}</td>
+    </tr>
+  </tbody>
+</table>
+<hr />
+<h1>Simple form</h1>
+<p>Import form module first</p>
+<form #simpleForm="ngForm" (ngSubmit)="getFormValues(simpleForm.value)">
+  <input type="text" name="username" placeholder="enter suername" ngModel /><br /><input
+    type="number"
+    ngModel
+    name="age"
+    placeholder="enter age"
+  /><br />
+  <textarea name="address" name="address" cols="30" rows="10" ngModel></textarea>
+  <button>Get user values</button>
+  
+</form>
+<hr />
+<h1>Style binding, Conditional Styling vs</h1>
+<h3 [style.color]="'red'">Lorem ipsum dayi</h3>
+<h3 [style.color]="colorOfH3">Change me</h3>
+<button (click)="updateColor()">Update coloe</button>
+<h2 [style.color]="error?'red':'green'">Errorluyum diyomm</h2>
+<hr>
+<h1 class="display=5">Bootstrap</h1>
+<div class="container m-auto">
+    <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0">
+        <ngb-panel title="Simple">
+          <ng-template ngbPanelContent>
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia
+            aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor,
+            sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica,
+            craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
+            occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
+            labore sustainable VHS.
+          </ng-template>
+        </ngb-panel>
+        <ngb-panel>
+          <ng-template ngbPanelTitle>
+            <span>&#9733; <b>Fancy</b> title &#9733;</span>
+          </ng-template>
+          <ng-template ngbPanelContent>
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia
+            aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor,
+            sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica,
+            craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
+            occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
+            labore sustainable VHS.
+          </ng-template>
+        </ngb-panel>
+        <ngb-panel title="Disabled" [disabled]="true">
+          <ng-template ngbPanelContent>
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia
+            aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor,
+            sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica,
+            craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
+            occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
+            labore sustainable VHS.
+          </ng-template>
+        </ngb-panel>
+      </ngb-accordion>
+</div>
+<app-footer></app-footer>
