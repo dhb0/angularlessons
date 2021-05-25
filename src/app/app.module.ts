@@ -9,6 +9,7 @@ import { UserListComponent } from './user-list/user-list.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {MatButtonModule} from "@angular/material/button"
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     AppRoutingModule,
     UsersModule,
     FormsModule,
-    NgbModule
+    NgbModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

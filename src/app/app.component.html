@@ -1,4 +1,3 @@
-
 <app-header></app-header>
 <h1>Hello World</h1>
 <h2>{{ title }}</h2>
@@ -107,67 +106,100 @@
 <h1>Simple form</h1>
 <p>Import form module first</p>
 <form #simpleForm="ngForm" (ngSubmit)="getFormValues(simpleForm.value)">
-  <input type="text" name="username" placeholder="enter suername" ngModel /><br /><input
+  <input
+    type="text"
+    name="username"
+    placeholder="enter suername"
+    ngModel
+  /><br /><input
     type="number"
     ngModel
     name="age"
     placeholder="enter age"
   /><br />
-  <textarea name="address" name="address" cols="30" rows="10" ngModel></textarea>
+  <textarea
+    name="address"
+    name="address"
+    cols="30"
+    rows="10"
+    ngModel
+  ></textarea>
   <button>Get user values</button>
-  
 </form>
 <hr />
 <h1>Style binding, Conditional Styling vs</h1>
 <h3 [style.color]="'red'">Lorem ipsum dayi</h3>
 <h3 [style.color]="colorOfH3">Change me</h3>
 <button (click)="updateColor()">Update coloe</button>
-<h2 [style.color]="error?'red':'green'">Errorluyum diyomm</h2>
-<hr>
+<h2 [style.color]="error ? 'red' : 'green'">Errorluyum diyomm</h2>
+<hr />
 <h1 class="display=5">Bootstrap</h1>
 <div class="container m-auto">
-    <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0">
-        <ngb-panel title="Simple">
-          <ng-template ngbPanelContent>
-            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia
-            aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor,
-            sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica,
-            craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
-            occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
-            labore sustainable VHS.
-          </ng-template>
-        </ngb-panel>
-        <ngb-panel>
-          <ng-template ngbPanelTitle>
-            <span>&#9733; <b>Fancy</b> title &#9733;</span>
-          </ng-template>
-          <ng-template ngbPanelContent>
-            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia
-            aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor,
-            sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica,
-            craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
-            occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
-            labore sustainable VHS.
-          </ng-template>
-        </ngb-panel>
-        <ngb-panel title="Disabled" [disabled]="true">
-          <ng-template ngbPanelContent>
-            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia
-            aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor,
-            sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica,
-            craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
-            occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
-            labore sustainable VHS.
-          </ng-template>
-        </ngb-panel>
-      </ngb-accordion>
-      <div class="card mb-4" style="width: 18rem;">
-        <img src="..." class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-      </div>
+  <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0">
+    <ngb-panel title="Simple">
+      <ng-template ngbPanelContent>
+        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
+        terry richardson ad squid. 3 wolf moon officia aute, non cupidatat
+        skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
+        Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid
+        single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh
+        helvetica, craft beer labore wes anderson cred nesciunt sapiente ea
+        proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft
+        beer farm-to-table, raw denim aesthetic synth nesciunt you probably
+        haven't heard of them accusamus labore sustainable VHS.
+      </ng-template>
+    </ngb-panel>
+    <ngb-panel>
+      <ng-template ngbPanelTitle>
+        <span>&#9733; <b>Fancy</b> title &#9733;</span>
+      </ng-template>
+      <ng-template ngbPanelContent>
+        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
+        terry richardson ad squid. 3 wolf moon officia aute, non cupidatat
+        skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
+        Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid
+        single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh
+        helvetica, craft beer labore wes anderson cred nesciunt sapiente ea
+        proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft
+        beer farm-to-table, raw denim aesthetic synth nesciunt you probably
+        haven't heard of them accusamus labore sustainable VHS.
+      </ng-template>
+    </ngb-panel>
+    <ngb-panel title="Disabled" [disabled]="true">
+      <ng-template ngbPanelContent>
+        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
+        terry richardson ad squid. 3 wolf moon officia aute, non cupidatat
+        skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
+        Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid
+        single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh
+        helvetica, craft beer labore wes anderson cred nesciunt sapiente ea
+        proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft
+        beer farm-to-table, raw denim aesthetic synth nesciunt you probably
+        haven't heard of them accusamus labore sustainable VHS.
+      </ng-template>
+    </ngb-panel>
+  </ngb-accordion>
+  <div class="card mb-4" style="width: 18rem">
+    <img src="..." class="card-img-top" alt="..." />
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">
+        Some quick example text to build on the card title and make up the bulk
+        of the card's content.
+      </p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+  </div>
 </div>
+<h1>Material UI</h1>
+<div class="example-button-row">
+  <button mat-button>Basic</button>
+  <button mat-button color="primary">Primary</button>
+  <button mat-button color="accent">Accent</button>
+  <button mat-button color="warn">Warn</button>
+  <button mat-button disabled>Disabled</button>
+  <a mat-button href="https://www.google.com/" target="_blank">Link</a>
+</div>
+<h1>Pass data to child</h1>
+<app-user-list [arr] = "arr"></app-user-list>
 <app-footer></app-footer>
