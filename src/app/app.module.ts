@@ -9,14 +9,18 @@ import { UserListComponent } from './user-list/user-list.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-import {MatButtonModule} from "@angular/material/button"
+import {MatButtonModule} from "@angular/material/button";
+import { UserComponent } from './user/user.component';
+import { ChildComponent } from './child/child.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     UserListComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    UserComponent,
+    ChildComponent
   ],
   imports: [
     BrowserModule,

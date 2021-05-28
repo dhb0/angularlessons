@@ -202,4 +202,16 @@
 </div>
 <h1>Pass data to child</h1>
 <app-user-list [arr] = "arr"></app-user-list>
+
+<hr />
+<h1>PReusable Components</h1>
+<div *ngFor="let data of members">
+  <app-user [members]="data"></app-user>
+</div>
+
+<hr />
+<h1>PASS data to parent</h1>
+
+<app-child (parentFunction)="parentFunction($event)"></app-child>
+
 <app-footer></app-footer>

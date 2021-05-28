@@ -123,8 +123,36 @@ export class AppComponent {
   updateColor(){
     this.colorOfH3 = 'brown'
   }
-  error=true
+  error=true;
+  members=[
+    {
+      name:"deniz",
+      age:30,
+      address:"corum"
+    },
+    {
+      name:"babun",
+      age:22,
+      address:"corum"
+    },
+    {
+      name:"burcu",
+      age:30,
+      address:"ankara"
+    },
+    {
+      name:"zalimey",
+      age:25,
+      address:"Istanbul"
+    }
+  ]
+
+  parentFunction(data:any){
+    console.warn(data);
+    this.variable=data.name
+  }
   
+  variable=``
 
 
 }

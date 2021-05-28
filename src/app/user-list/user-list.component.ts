@@ -12,7 +12,7 @@ export class UserListComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.arr[0])
+    console.log(this.arr?.[0])
   }
 
 }
