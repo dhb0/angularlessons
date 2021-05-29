@@ -11,7 +11,8 @@ import { FooterComponent } from './footer/footer.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {MatButtonModule} from "@angular/material/button";
 import { UserComponent } from './user/user.component';
-import { ChildComponent } from './child/child.component'
+import { ChildComponent } from './child/child.component';
+import { NotfoundComponent } from './notfound/notfound.component'
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ChildComponent } from './child/child.component'
     HeaderComponent,
     FooterComponent,
     UserComponent,
-    ChildComponent
+    ChildComponent,
+    NotfoundComponent
   ],
   imports: [
     BrowserModule,

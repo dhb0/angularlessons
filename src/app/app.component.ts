@@ -153,6 +153,13 @@ export class AppComponent {
   }
   
   variable=``
+  myFullName="dEniZ bEYaZ"
+
+  today = Date.now()
+
+  str=`Hello angular gardasim`
+
+  money=100
 
 
 }

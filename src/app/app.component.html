@@ -214,4 +214,21 @@
 
 <app-child (parentFunction)="parentFunction($event)"></app-child>
 
+<hr />
+<h1>Pipes</h1>
+<h3>Pipe is all about formatting</h3>
+<p>{{myFullName | uppercase}}</p>
+<p>{{myFullName | titlecase}}</p>
+<p>{{myFullName | lowercase}}</p>
+<p>{{today | date}}</p>
+<p>{{today | date:'fullDate'}}</p>
+<p>{{str | slice:2:6}}</p>
+<p>{{money | currency:"GBP"}}</p>
+
+<a routerLink="userlist">Router Userlist</a>
+<a routerLink="child">Router Child</a>
+<a routerLink="about">404 route</a>
+<router-outlet></router-outlet>
+
+
 <app-footer></app-footer>
