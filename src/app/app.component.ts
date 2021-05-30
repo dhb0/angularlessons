@@ -1,5 +1,12 @@
 import { Component } from '@angular/core';
 import {UsersServiceService} from "./users-service.service"// to use service
+
+interface dataType{
+  name:string,
+  id:number,
+  retired:boolean,
+  adress:any
+}
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -170,6 +177,17 @@ export class AppComponent {
 
     this.user.fetchData().subscribe(data => {console.warn(data);this.usersData = data})
     
+  }
+
+  showData(){
+
+    let data:dataType = {
+      name:"dhb",
+      id:10,
+      retired:false,
+      adress: Date.now()
+    }
+    return data
   }
 
 }
