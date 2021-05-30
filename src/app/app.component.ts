@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import {UsersServiceService} from "./users-service.service"// to use service
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -160,6 +160,16 @@ export class AppComponent {
   str=`Hello angular gardasim`
 
   money=100
+  namefromservice=""
+  usersData:any = []
 
+
+  constructor(private user:UsersServiceService){
+    console.log(this.user.getData())
+    this.namefromservice = "maymunet";
+
+    this.user.fetchData().subscribe(data => {console.warn(data);this.usersData = data})
+    
+  }
 
 }

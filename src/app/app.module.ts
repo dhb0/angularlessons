@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import {HttpClientModule} from "@angular/common/http" //to use http service
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,7 +13,8 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {MatButtonModule} from "@angular/material/button";
 import { UserComponent } from './user/user.component';
 import { ChildComponent } from './child/child.component';
-import { NotfoundComponent } from './notfound/notfound.component'
+import { NotfoundComponent } from './notfound/notfound.component';
+import { CustomStyleDirective } from './custom-style.directive'
 
 @NgModule({
   declarations: [
@@ -22,7 +24,8 @@ import { NotfoundComponent } from './notfound/notfound.component'
     FooterComponent,
     UserComponent,
     ChildComponent,
-    NotfoundComponent
+    NotfoundComponent,
+    CustomStyleDirective
   ],
   imports: [
     BrowserModule,
@@ -30,7 +33,8 @@ import { NotfoundComponent } from './notfound/notfound.component'
     UsersModule,
     FormsModule,
     NgbModule,
-    MatButtonModule
+    MatButtonModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

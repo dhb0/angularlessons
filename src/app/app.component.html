@@ -201,7 +201,7 @@
   <a mat-button href="https://www.google.com/" target="_blank">Link</a>
 </div>
 <h1>Pass data to child</h1>
-<app-user-list [arr] = "arr"></app-user-list>
+<app-user-list [arr]="arr"></app-user-list>
 
 <hr />
 <h1>PReusable Components</h1>
@@ -217,18 +217,36 @@
 <hr />
 <h1>Pipes</h1>
 <h3>Pipe is all about formatting</h3>
-<p>{{myFullName | uppercase}}</p>
-<p>{{myFullName | titlecase}}</p>
-<p>{{myFullName | lowercase}}</p>
-<p>{{today | date}}</p>
-<p>{{today | date:'fullDate'}}</p>
-<p>{{str | slice:2:6}}</p>
-<p>{{money | currency:"GBP"}}</p>
+<p>{{ myFullName | uppercase }}</p>
+<p>{{ myFullName | titlecase }}</p>
+<p>{{ myFullName | lowercase }}</p>
+<p>{{ today | date }}</p>
+<p>{{ today | date: "fullDate" }}</p>
+<p>{{ str | slice: 2:6 }}</p>
+<p>{{ money | currency: "GBP" }}</p>
 
 <a routerLink="userlist">Router Userlist</a>
 <a routerLink="child">Router Child</a>
 <a routerLink="about">404 route</a>
 <router-outlet></router-outlet>
+<h1>Custom Directive</h1>
+<h1>Normal Heading</h1>
+<h1 appCustomStyle>Custom Heading</h1>
+<h1>Services</h1>
+<h1>{{ namefromservice }}</h1>
 
+<h1 appCustomStyle>Call an API</h1>
+<table border="1">
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>UserName</th>
+  </tr>
+  <tr *ngFor="let user of usersData">
+    <th>{{user.id}}</th>
+    <th>{{user.name}}</th>
+    <th>{{user.username}}</th>
+  </tr>
+</table>
 
 <app-footer></app-footer>
