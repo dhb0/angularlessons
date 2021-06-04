@@ -14,7 +14,9 @@ import {MatButtonModule} from "@angular/material/button";
 import { UserComponent } from './user/user.component';
 import { ChildComponent } from './child/child.component';
 import { NotfoundComponent } from './notfound/notfound.component';
-import { CustomStyleDirective } from './custom-style.directive'
+import { CustomStyleDirective } from './custom-style.directive';
+import { PokemonsModule } from "./pokemons/pokemons.module",
+import { AdminModule } from './admin/admin.module';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { CustomStyleDirective } from './custom-style.directive'
     FormsModule,
     NgbModule,
     MatButtonModule,
-    HttpClientModule
+    HttpClientModule,
+    PokemonsModule,
+    AdminModule
   ],
   providers: [],
   bootstrap: [AppComponent]
